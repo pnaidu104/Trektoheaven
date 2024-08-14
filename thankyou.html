@@ -85,10 +85,33 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    
+    <script>
+        $(document).ready(function () {
+
+            // Check to see if the window is at the top.  If not then display button.
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            // Click event to to top.
+
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+
+        });
+    </script>
 
     <script>
-       /* $(document).ready(function () {
+        $(document).ready(function () {
             // Check to see if the window is at the top. If not, display the button.
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 100) {
@@ -108,49 +131,6 @@
                 return false;
             });
         });
-        
-        
-        // Form submission handling
-            $('form').submit(function (event) {
-                event.preventDefault(); // Prevent the default form submission
-
-                // Add your additional actions or validations here if needed
-
-                // Redirect to thankyou.html
-                window.location.href = "thankyou.html";
-            }); */
-        
-        $(document).ready(function () {
-        // Check to see if the window is at the top. If not, display the button.
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 100) {
-                $('.scrollToTop').fadeIn();
-                $('.sliding-nav').addClass('show'); // Add show class when scrolling down
-            } else {
-                $('.scrollToTop').fadeOut();
-                $('.sliding-nav').removeClass('show'); // Remove show class when scrolling up
-            }
-        });
-
-        // Click event to scroll to the top.
-        $('.scrollToTop').click(function () {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-
-        // Form submission handling
-        $('form').submit(function (event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Add your additional actions or validations here if needed
-
-            // Redirect to thankyou.html
-            window.location.href = "thankyou.html";
-        });
-    });
-        
     </script>
 
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -196,10 +176,10 @@
                         <button class="btn btn-default" type="submit" id="search-button">
                 <i class="glyphicon glyphicon-search"></i>
             </button>
+                    
         </div>
     </div>
             </form>
-
         </nav>
 
     </header>
@@ -250,75 +230,8 @@
 
 
             <main>
+                <h1> Thank you for contacting us, we will get to you soon</h1>
                 
-                <h1>Contact Us</h1>
-    <hr>
-
-                <div class="row">
-                    
-                        <div class="container">
-                            <div class="col-md-6">
-                            <form action="/action_page.php" method="post">
-                                <label for="fname">First Name</label>
-                                <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-                                <label for="lname">Last Name</label>
-                                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-                                <label for="contactNumber">Contact Number</label>
-                                <input type="tel" id="contactNumber" name="contactnumber"
-                                    placeholder="Your contact number..">
-
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="Your email address..">
-                                
-                                <label for="country">Country</label>
-                                <input type="text" id="country" name="email" placeholder="Your Country..">
-
-                                <label for="continent">Continent</label>
-                                <select id="continent" name="continent">
-                                    <option value="northamerica">North America</option>
-                                    <option value="southamerica">South America</option>
-                                    <option value="europe">Europe</option>
-                                    <option value="asia">Asia</option>
-                                    <option value="australia">Australia</option>
-                                </select>
-
-                                <label for="subject">Subject</label>
-                                <textarea id="subject" name="subject" placeholder="Please give your thoughts"
-                                    style="height:200px"></textarea>
-
-                                <input type="submit" value="Submit">
-                            </form>
-                        </div>
-                    
-                    <div class="col-md-6">
-                        <p>It is better to have some backup plan if we things go sideways, first we land on Nepal
-                            it is recommended to take their SIM/mobile phone services which will be provided in
-                            their Airport or regular phone shops, in mountains there will be selected regions where
-                            sim services are available. Second, it is better have a list of emergency contact numbers
-                            for us and for fellow travellers and for all people, who are in need. </p>
-                        <p>
-                            List of Emergency Contact Numbers in Nepal :- </p>
-                            <ul>
-                            <li>Police (Emergency) 100</li>
-                            <li>Tourist Police (Bhrikuti Mandap) 01 4226359/4226403</li>
-                            <li>Nepal Tourism Board 01 4256909/4256229</li>
-                            <li>Department of Immigration 01 4223509/4222453</li>
-                            <li>Ask me 01 4427806</li>
-                            <li>AT&T Card Access 01 0800-77001</li>
-                            <li>Asking Number 197</li>
-                            <li>Annapurna Conservation Project (ACAP) 01 4222406</li>
-                            <li>Nepal Helicopter Emergency Medical Service (HEMS). Medical Helicopter Service,
-                                Emergency Heli Rescue - +977 986-0939995</li>
-                            <li>9801904643 (for Heli Rescue, all over Nepal)</li>
-                        </ul>
-                    </div>
-                             </div>
-                </div>
-                    
-            
-
             </main>
             <footer>
 
@@ -339,7 +252,7 @@
                     </div>
                     <div id="social">
                         <a href="http://www.facebook.com"><img class="footerimg" src="images/facebook.png"
-                                alt="facebook footer image" ></a>
+                                alt="Image alt text" ></a>
                         <a class="text-center" href="http://www.twitter.com"><img class="footerimg"
                                 src="images/twitter.png" alt="Image alt text" ></a>
                         <a class="text-center" href="http://www.youtube.com"><img class="footerimg"
@@ -349,8 +262,7 @@
             </footer>
 
         </div>
-    </div>
-
+        </div>
 </body>
 
 </html>

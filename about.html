@@ -7,7 +7,6 @@
     <meta name="description" content="html5 web development training">
     <meta name="keywords" content="HTML, HTML5, Web Development,html training">
     <meta name="author" content="Parikshit Naidu">
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
@@ -176,7 +175,7 @@
 </head>
 
 <body>
-    <a href="#" class="scrollToTop"><img src="images/uparrows-01.png" width="45%" height="auto"></a>
+    <a href="#" class="scrollToTop"><img src="images/uparrows-01.png" class="responsive-image" alt="Up Arrorw"></a>
     <header>
         <nav class="navbar navbar-default navbar-fixed-top navbar-center sliding-nav">
             <div class="container-fluid">
@@ -203,16 +202,17 @@
                     </ul>
                 </div>
             </div>
-            <form id="search-form" class="navbar-form" role="search">
+            <!-- search bar -->
+            <form id="search-form" class="navbar-form" role="search" action="https://www.google.com/search" method="get" target="_blank">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                    <input type="text" class="form-control" placeholder="Search for trekking details" name="q" id="search-input">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit" id="search-button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </div>
+    </div>
+</form>
         </nav>
     </header>
 
@@ -267,10 +267,10 @@
                 <div class="img-comp-container">
                     <!-- Image comparison code for the left side -->
                     <div class="img-comp-img">
-                        <img src="images/myphoto1.jpg" width="480" height="540">
+                        <img src="images/myphoto1.jpg" alt="my photo" width="480" height="540">
                     </div>
                     <div class="img-comp-img img-comp-overlay">
-                        <img src="images/myphoto3.jpg" width="482" height="540">
+                        <img src="images/myphoto3.jpg" alt="my photo" width="482" height="540">
                     </div>
                 </div>
             </div>
@@ -304,9 +304,9 @@
                 </ul>
             </div>
             <div id="social">
-                <a href="http://www.facebook.com"><img class="" src="images/facebook.png" alt="Image alt text" /></a>
-                <a class="text-center" href="http://www.twitter.com"><img class="footerimg" src="images/twitter.png" alt="Image alt text" /></a>
-                <a class="text-center" href="http://www.youtube.com"><img class="footerimg" src="images/youtube.png" alt="Image alt text" /></a>
+                <a href="http://www.facebook.com"><img class="" src="images/facebook.png" alt="Image alt text" ></a>
+                <a class="text-center" href="http://www.twitter.com"><img class="footerimg" src="images/twitter.png" alt="Image alt text" ></a>
+                <a class="text-center" href="http://www.youtube.com"><img class="footerimg" src="images/youtube.png" alt="Image alt text" ></a>
             </div>
         </nav>
     </footer>
