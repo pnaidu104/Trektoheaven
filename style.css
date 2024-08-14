@@ -6,7 +6,15 @@
     float: right;
 }
 
+.responsive-image {
+    width: 45%;
+    height: auto;
+}
 
+.full-width-image {
+    width: 100%;
+    height: auto;
+}
 
 .navbar {
     background-color: lightgray;
@@ -70,9 +78,13 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-    width: 70%;
+    width: 75%; /* Let the width adjust to maintain aspect ratio */
+    height: 75%; /* Make the image fill the height of the carousel item */
+    object-fit: cover; /* Ensures images cover the container without distortion */
     margin: auto;
 }
 
