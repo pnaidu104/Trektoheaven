@@ -173,6 +173,13 @@ h3 {
 }
 }
 
+.error {
+    color: red;
+    font-size: 0.875em; /* Slightly smaller text for error messages */
+    display: block; /* Ensure error messages are on their own line */
+    margin-top: 5px; /* Space between input field and error message */
+}
+
 @media only screen and (max-width: 600px) {
     .slideshow-image {
         width: 100%; /* 100% width on smaller screens */

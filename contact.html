@@ -9,6 +9,13 @@
     <meta name="keywords" content="HTML, HTML5, Web Development,html training">
     <meta name="author" content="Parikshit Naidu">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Form</title>
+
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    
 
     <style>
         .scrollToTop {
@@ -79,79 +86,15 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     
 
-    <script>
-       /* $(document).ready(function () {
-            // Check to see if the window is at the top. If not, display the button.
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 100) {
-                    $('.scrollToTop').fadeIn();
-                    $('.sliding-nav').addClass('show'); // Add show class when scrolling down
-                } else {
-                    $('.scrollToTop').fadeOut();
-                    $('.sliding-nav').removeClass('show'); // Remove show class when scrolling up
-                }
-            });
+  
+    
+<script src="script.js"></script>
 
-            // Click event to scroll to the top.
-            $('.scrollToTop').click(function () {
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 800);
-                return false;
-            });
-        });
-        
-        
-        // Form submission handling
-            $('form').submit(function (event) {
-                event.preventDefault(); // Prevent the default form submission
-
-                // Add your additional actions or validations here if needed
-
-                // Redirect to thankyou.html
-                window.location.href = "thankyou.html";
-            }); */
-        
-        $(document).ready(function () {
-        // Check to see if the window is at the top. If not, display the button.
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 100) {
-                $('.scrollToTop').fadeIn();
-                $('.sliding-nav').addClass('show'); // Add show class when scrolling down
-            } else {
-                $('.scrollToTop').fadeOut();
-                $('.sliding-nav').removeClass('show'); // Remove show class when scrolling up
-            }
-        });
-
-        // Click event to scroll to the top.
-        $('.scrollToTop').click(function () {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-
-        // Form submission handling
-        $('form').submit(function (event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Add your additional actions or validations here if needed
-
-            // Redirect to thankyou.html
-            window.location.href = "thankyou.html";
-        });
-    });
-        
-    </script>
 
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -258,22 +201,28 @@
                     
                         <div class="container">
                             <div class="col-md-6">
-                            <form action="/action_page.php" method="post">
+                            <form id="contactForm" action="" method="post">
                                 <label for="fname">First Name</label>
                                 <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                                <span class="error" id="fname-error"></span>
+
 
                                 <label for="lname">Last Name</label>
                                 <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                                <span class="error" id="lname-error"></span>         
 
                                 <label for="contactNumber">Contact Number</label>
                                 <input type="tel" id="contactNumber" name="contactnumber"
                                     placeholder="Your contact number..">
+                                <span class="error" id="contactNumber-error"></span>
 
                                 <label for="email">Email Address</label>
                                 <input type="email" id="email" name="email" placeholder="Your email address..">
+                                <span class="error" id="email-error"></span>
                                 
                                 <label for="country">Country</label>
                                 <input type="text" id="country" name="email" placeholder="Your Country..">
+                                <span class="error" id="country-error"></span>
 
                                 <label for="continent">Continent</label>
                                 <select id="continent" name="continent">
@@ -283,10 +232,12 @@
                                     <option value="asia">Asia</option>
                                     <option value="australia">Australia</option>
                                 </select>
-
+                                <span class="error" id="continent-error"></span>
+                                
                                 <label for="subject">Subject</label>
-                                <textarea id="subject" name="subject" placeholder="Please give your thoughts"
+                                <textarea id="subject" name="subject" placeholder="Please let us know your queries, we will be happy to help :)"
                                     style="height:200px"></textarea>
+                                    <span class="error" id="subject-error"></span>
 
                                 <input type="submit" value="Submit">
                             </form>
