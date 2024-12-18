@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: frontend
+    ports:
+      - "80:80"
+    networks:
+      - frontend-backend-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: backend
+    environment:
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DB=${MYSQL_DB}
+    env_file:
+      - ./backend/.env  # This line is optional if .env is in the same directory
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+    networks:
+      - frontend-backend-network
+    volumes:
+      - ./backend:/usr/src/app
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DB}
+    env_file:
+      - .env
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - frontend-backend-network
+    ports:
+      - "3307:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql  # Connect to the MySQL service
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}  # Use the root password from .env
+    ports:
+    - "8081:80"  # Expose phpMyAdmin on port 8081
+    depends_on:
+    - mysql
+    networks:
+    - frontend-backend-network
+
+networks:
+  frontend-backend-network:
+    driver: bridge
+
+volumes:
+  mysql_data:

@@ -1,5 +1,7 @@
-backend01/
+# .dockerignore
+
 # Ignore the .env file to prevent it from being copied into the Docker image
 .env
+
 # Ignore node_modules folder (not needed in the image as dependencies will be installed)
-node_modules/
+node_modules
