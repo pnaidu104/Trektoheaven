@@ -50,7 +50,7 @@ This app is opertaing on docker-compose, not individually
    - Frontend: http://localhost:80
    - Backend: http://localhost:5000
    - Database: http://localhost:3307
-   - phpmyAdmin: http//localhost:8081(to view your database input)
+   - phpmyAdmin: http//localhost:8081 (to view your database input)
 
 ## Cleaning Up
 
